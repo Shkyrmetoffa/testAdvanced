@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <div class="wrapper wrapper-content  animated fadeInRight">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <div class="passwordBox animated fadeInDown">
+                                <h2 class="font-bold">Create User</h2>
+                                <form class="m-t" role="form">
+                                    <input type="name" class="form-control" name="name" placeholder="Enter your name" required="">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter your email address" required="">
+                                    <select class="form-control m-b" name="account">
+                                        <option>Admin</option>
+                                        <option>User</option>
+                                        <option>Guest</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary block full-width s-b">Add</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            <div class="table-responsive">
+                                <h2> Users list</h2>
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a data-toggle="tab" href="#contact-2" class="client-link"></a>
+                                            </td>
+                                            <td>
+                                                <a data-toggle="tab" href="#" class="client-link"></a>
+                                            </td>
+                                            <td>
+                                                <a data-toggle="tab" href="#contact-2" class="client-link"></a>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                For <strong>EasyCode</strong>.
+            </div>
+            <div>
+                <strong>Copyright</strong> Jane Shkyrmetoffa © 2017
+            </div>
+        </div>
+    </div>
+    <script src="dist/bundle.js"></script>
+</body>
+
+</html>
