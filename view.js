@@ -12,6 +12,7 @@ class View {
                                             </td></tr>`;
         return tbody;
     }
+
 }
 let view = new View();
 export { view };

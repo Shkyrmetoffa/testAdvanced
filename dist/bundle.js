@@ -108,17 +108,21 @@ controller.render();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return form; });
 let form = document.querySelector("form");
 
-class Person extends Person {
-    controller() {}
+// class Person extends Person {
+//     controller() {}
 
-}
-class Guest extends Person {
-    constructor() {
-        super();
-    }
-}
-class User extends Person {}
-class Admin extends Person {}
+// }
+// class Guest extends Person {
+//     constructor() {
+//         super();
+//     }
+// }
+// class User extends Person {
+
+// }
+// class Admin extends Person {
+
+// }
 // person.createUser();
 // class Guest extends Person {
 //     constructor() {
