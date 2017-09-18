@@ -17,9 +17,11 @@ class Controller {
                 }
             }
             this.saveToLocalStorage(name, email, role);
+            name = localStorage.getItem("name");
+            email = localStorage.getItem("email");
+            role = localStorage.getItem("role");
 
             view.createTag(name, email, role);
-
             form.reset();
         });
     }
@@ -27,52 +29,38 @@ class Controller {
         localStorage.setItem("name", name);
         localStorage.setItem("email", email);
         localStorage.setItem("role", role);
+    }
+    createInputText(value, content) {
+        return `<input type="text" id="text" value="${content}" required="">`;
+    }
 
-        // console.log(localStorage.getItem("name"));
-    }
-    createTextArea(value) {
-        return `<textarea class="edit-area">${value}</textarea>`;
-    }
-    aNone(tag) {
-        let a = tag.firstChild;
-        if (a.style.display == 'none') {
-            a.style.display = 'inline-block';
-        } else {
-            a.style.display = 'none';
-        }
-    }
     editUser() {
         tbody.addEventListener('dblclick', (e) => {
-            if (e.target.tagName == "TD") {
-                let td = e.target;
+            if (e.target.tagName == "A") {
+                let a = e.target;
                 let value = e.target.textContent;
-                let textArea = this.createTextArea(value);
-                // this.aNone(td);
-                td.insertAdjacentHTML("beforeEnd", textArea);
-                console.log(textArea);
-                this.saveAfterEdit();
+                let inputText = this.createInputText(value, a.textContent);
+                a.textContent = "";
+                a.insertAdjacentHTML("beforeEnd", inputText);
 
+                this.saveAfterEdit();
             };
         });
     }
     saveAfterEdit() {
-        let textArea = document.querySelector('textArea');
+        let inputText = document.getElementById('text');
         let a = document.querySelector('a');
 
-        textArea.addEventListener('blur', () => {
-            console.log('hello');
+        inputText.addEventListener('blur', () => {
+            inputText.focus();
+            a.innerHTML = inputText.value;
             a.style.display = 'inline-block';
-            a.innerHTML = textArea.textContent;
-            console.log(a);
-
-            // textArea.style = none;
+            inputText.style.display = 'none';
         });
     }
-
     render() {
         this.addUser();
         this.editUser();
-
     }
 }
 let controller = new Controller();
